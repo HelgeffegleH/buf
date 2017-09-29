@@ -1,7 +1,7 @@
 ﻿#include "shortmacro.h"
 unsigned int __cdecl shortCount(unsigned short* hay, unsigned short* ned, unsigned int haylen, unsigned int nedlen, unsigned int overlap){	
 	// specify overlap = 1 to count overlapping occurances, eg in hay='aaa', the needle 'aa' is found twice: [aa]a and a[aa].
-	// for shortCount(), compiled with gcc  -Ofast
+	// for shortCount(), compiled with gcc -O2
 	unsigned int i=0;
 	unsigned int n=0;
 	unsigned int j;
