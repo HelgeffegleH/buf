@@ -1,6 +1,6 @@
 ﻿;	;	;	;	;	;	;	;	;	;	;	;	;	;	;	;
 ;	Byte functions.
-;	buffers are char*, that is one bytes per 'element'.
+;	buffers are char*, that is one byte per 'element'.
 ;
 buf_byte_find(hay, ned, haylen, nedlen, init:=false){
 	; Finds the first occurance of ned in hay.
@@ -44,7 +44,7 @@ buf_byte_write(hay, ned, wrt, haylen, nedlen, wrtlen, count:=-1, offset:=0, init
 	; 	nedlen, length of the buffer ned
 	; 	wrtlen, length of the buffer wrt
 	;	count, maximum number of writes to do, specify -1 to write at all matches, default.
-	;	offset, specify a offset from where ned is found to where wrt is written. Eg, hay:="abc", ned:="b", wrt:="d", offset:=-2 --> "dbc". After write, the search continues 1 step forward from the match, not from the write.
+	;	offset, specify a offset from where ned is found to where wrt is written. Eg, hay:="abc", ned:="b", wrt:="d", offset:=-2 --> "dbc". After write, the search continues wrtlen steps forward from the match, not from the write.
 	; 	init, internal use, omit.
 	;
 	; Return
@@ -145,7 +145,7 @@ buf_short_write(hay, ned, wrt, haylen, nedlen, wrtlen, count:=-1, offset:=0, ini
 	; 	nedlen, length of the buffer ned
 	; 	wrtlen, length of the buffer wrt
 	;	count, maximum number of writes to do, specify -1 to write at all matches, default.
-	;	offset, specify a offset from where ned is found to where wrt is written. Eg, hay:="abc", ned:="b", wrt:="d", offset:=-2 --> "dbc". After write, the search continues 1 step forward from the match, not from the write.
+	;	offset, specify a offset from where ned is found to where wrt is written. Eg, hay:="abc", ned:="b", wrt:="d", offset:=-2 --> "dbc". After write, the search continues wrtlen steps forward from the match, not from the write.
 	; 	init, internal use, omit.
 	;
 	; Return
