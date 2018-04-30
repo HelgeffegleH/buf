@@ -31,7 +31,7 @@ buf_byte_find(hay, ned, haylen, nedlen, init:=false){
 		static _ := init()
 		bin:=DllCall("Kernel32.dll\VirtualAlloc", "Uptr",0, "Ptr", (raw:=A_PtrSize==4?raw32:raw64).length()*4, "Uint", flAllocationType, "Uint", flProtect, "Ptr")
 		for k, i in raw
-			NumPut(i,bin+(k-1)*4,"Int")
+			NumPut(integer(i), bin+(k-1)*4, "Int")
 		raw32:="",raw64:=""
 		return bin
 	}
@@ -67,7 +67,7 @@ buf_byte_write(hay, ned, wrt, haylen, nedlen, wrtlen, count:=-1, offset:=0){
 		static _ := init()
 		bin:=DllCall("Kernel32.dll\VirtualAlloc", "Uptr",0, "Ptr", (raw:=A_PtrSize==4?raw32:raw64).length()*4, "Uint", flAllocationType, "Uint", flProtect, "Ptr")
 		for k, i in raw
-			NumPut(i,bin+(k-1)*4,"Int")
+			NumPut(i, bin+(k-1)*4, "Int")
 		raw32:="",raw64:=""
 		pbyteFind := buf_byte_find("","","","",true)
 		return bin
@@ -97,7 +97,7 @@ buf_byte_count(hay, ned, haylen, nedlen, overlap:=false){
 		static _ := init()
 		bin:=DllCall("Kernel32.dll\VirtualAlloc", "Uptr",0, "Ptr", (raw:=A_PtrSize==4?raw32:raw64).length()*4, "Uint", flAllocationType, "Uint", flProtect, "Ptr")
 		for k, i in raw
-			NumPut(i,bin+(k-1)*4,"Int")
+			NumPut(integer(i), bin+(k-1)*4, "Int")
 		raw32:="",raw64:=""
 		return bin
 	}
@@ -135,7 +135,7 @@ buf_short_find(hay, ned, haylen, nedlen, init:=false){
 		static _ := init()
 		bin:=DllCall("Kernel32.dll\VirtualAlloc", "Uptr",0, "Ptr", (raw:=A_PtrSize==4?raw32:raw64).length()*4, "Uint", flAllocationType, "Uint", flProtect, "Ptr")
 		for k, i in raw
-			NumPut(i,bin+(k-1)*4,"Int")
+			NumPut(integer(i), bin+(k-1)*4, "Int")
 		raw32:="",raw64:=""
 		return bin
 	}
@@ -169,7 +169,7 @@ buf_short_write(hay, ned, wrt, haylen, nedlen, wrtlen, count:=-1, offset:=0){
 		static _ := init()
 		bin:=DllCall("Kernel32.dll\VirtualAlloc", "Uptr",0, "Ptr", (raw:=A_PtrSize==4?raw32:raw64).length()*4, "Uint", flAllocationType, "Uint", flProtect, "Ptr")
 		for k, i in raw
-			NumPut(i,bin+(k-1)*4,"Int")
+			NumPut(i, bin+(k-1)*4, "Int")
 		raw32:="",raw64:=""
 		pshortFind:=buf_short_find("","","","",true)
 		return bin
@@ -201,7 +201,7 @@ buf_short_count(hay, ned, haylen, nedlen, overlap:=false){
 		static _ := init()
 		bin:=DllCall("Kernel32.dll\VirtualAlloc", "Uptr",0, "Ptr", (raw:=A_PtrSize==4?raw32:raw64).length()*4, "Uint", flAllocationType, "Uint", flProtect, "Ptr")
 		for k, i in raw
-			NumPut(i,bin+(k-1)*4,"Int")
+			NumPut(integer(i), bin+(k-1)*4, "Int")
 		raw32:="",raw64:=""
 		pshortFind:=buf_short_find("","","","",true)
 		return bin
